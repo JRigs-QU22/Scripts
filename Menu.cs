@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelManage : MonoBehaviour
+public class Menu : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,12 +14,10 @@ public class LevelManage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) // if escape is pressed, go to main menu
-        {
-            SceneManager.LoadScene("Scene_2");
-        }
-
         
-    }  
-
+    }
+    public void MMenu() //creates menu function for button
+    {
+        SceneManager.LoadScene("Scene_2"); //loads main menu screen
+    }
 }

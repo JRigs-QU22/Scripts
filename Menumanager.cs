@@ -14,15 +14,15 @@ public class Menumanager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape)) //if escape is pressed, load main menu
         {
             SceneManager.LoadScene("Scene_2");
         }
     }
 
-    public void Instructions()
+    public void Credit()
     {
-        SceneManager.LoadScene("Scene_3");
+        SceneManager.LoadScene("Scene_Credits"); //creates function for button to go to credit screen
     }
 
     public void LoadGame()

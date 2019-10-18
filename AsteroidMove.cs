@@ -14,6 +14,7 @@ public class AsteroidMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (transform.position.x > 9) // if the box goes beyond the right edge, make speed negative
         {
             speed = -speed;

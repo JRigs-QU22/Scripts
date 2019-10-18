@@ -9,14 +9,17 @@ public class ShipMove : MonoBehaviour
     public AudioSource thrust; // audio source for thruster sound
     public AudioSource Hit; //audio source for asteroid hit sound
     public Text tellplay; // text field to update
- 
+   // public Animator spinnyship;
+   // public bool spin;
+
     int hits; // counts how many times player gets hit
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+      //  spinnyship = GetComponent<Animator>();
+        //spin = false;
     }
 
     // Update is called once per frame
@@ -26,7 +29,7 @@ public class ShipMove : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow)) //if up arrow key is pressed, move in up direction
         {
             thrust.Play(); //play thruster audio
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0, 12);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, 13);
 
 
         }
@@ -44,14 +47,16 @@ public class ShipMove : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision) // on collision
     {
-        
+
         if (collision.gameObject.tag == "asteroid") //if ship is hit by object with asteroid tag
         {
-         
             Hit.Play(); //play hit audio
             hits++; //increase hit int by one
             Debug.Log("i HIT AN ASTEROID"); //send message o console to show collision worked
-            tellplay.text = "Hits Taken:" + hits; //Print this to console
+            tellplay.text = "Hits Taken:" + hits; //Print this to console      
+
+           // spin = true;
+            //spinnyship.SetBool("Collide?", spin);
 
             if (hits > 4) //if you get hit 5 times
             {
@@ -60,6 +65,11 @@ public class ShipMove : MonoBehaviour
                 SceneManager.LoadScene("Scene_Lose"); //Load lose screen
             }
         }
+       /* else
+        {
+            spin = false;
+            spinnyship.SetBool("Collide?", spin);
+        }*/
     }
 
 

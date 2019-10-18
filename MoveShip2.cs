@@ -25,7 +25,7 @@ public class MoveShip2 : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow)) //if up arrow key is pressed, move in up direction
         {
             thrust.Play(); //play thruster audio
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0, 12);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, 13);
 
 
         }
